@@ -61,3 +61,14 @@ export const getproductbyid =  async (req,res)=>{
 
     }
 }
+
+export const updateProduct = async (req,res)=>{
+    try{
+        const {name,price} = req.body;
+        const updatedProduct =await Product.findByIdAndUpdate(req.params.id,{name,price})
+        res.json(updatedProduct)
+
+    }catch{
+
+    }
+}
